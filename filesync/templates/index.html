@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}File Server{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center p-6 bg-white text-black">
+  <div class="w-full max-w-md space-y-6 text-sm font-normal text-center">
+
+    <h1 class="font-bold text-sm">File Server</h1>
+
+    <p>This service lets you securely upload and download files using a unique ID.</p>
+    <p>After uploading, you'll receive a link to share or re-access your file.</p>
+    <p>Files are not publicly listed — only accessible if you have the link.</p>
+    <p class="text-red-600">Files may be removed at any time, without notice or reason.</p>
+
+    <div class="space-y-2">
+      <a href="/upload" class="block w-full text-center bg-black text-white py-2">
+        Upload a File
+      </a>
+      <a href="/download/example" class="block w-full text-center bg-black text-white py-2">
+        Download a File (example)
+      </a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

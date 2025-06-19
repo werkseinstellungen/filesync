@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center p-6 bg-white text-black">
+  <div class="w-full max-w-md space-y-6 text-sm font-normal">
+
+    <h1 class="font-bold text-sm">Upload File</h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data" class="space-y-4">
+      <div>
+        <label for="file" class="font-bold">Select File</label><br>
+        <input id="file" type="file" name="file" class="w-full text-sm font-normal">
+      </div>
+
+      <div class="space-y-2">
+        <button type="submit" class="block w-full text-center bg-black text-white py-2">
+          Upload File
+        </button>
+        <a href="/" class="block w-full text-center bg-black text-white py-2">
+          Return to Home
+        </a>
+      </div>
+    </form>
+
+  </div>
+</div>
+{% endblock %}

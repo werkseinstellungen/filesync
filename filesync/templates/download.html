@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Download File{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center p-6 bg-white text-black">
+  <div class="w-full max-w-md space-y-6 text-sm font-normal">
+
+    <h1 class="font-bold text-sm">Download File</h1>
+
+    <div class="space-y-2">
+      <p class="font-bold">File Name</p>
+      <p class="font-mono">{{ metadata.original_filename }}</p>
+
+      <p class="font-bold">File ID</p>
+      <p class="font-mono">{{ metadata.file_id }}</p>
+
+      <p class="font-bold">SHA-256 Hash</p>
+      <p class="font-mono break-all">{{ metadata.sha256 }}</p>
+    </div>
+
+    <div class="space-y-2">
+      <a href="{{ url_for('serve_file', file_id=metadata.file_id) }}"
+         class="block w-full text-center bg-black text-white py-2">Download File</a>
+
+      <a href="/"
+         class="block w-full text-center bg-black text-white py-2">Return to Home</a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

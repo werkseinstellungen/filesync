@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Success{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center p-6 bg-white text-black">
+  <div class="w-full max-w-md space-y-6 text-sm font-normal">
+
+    <h1 class="font-bold text-sm">Upload Success</h1>
+
+    <div class="space-y-2">
+      <p class="font-bold">File ID</p>
+      <p class="font-mono">{{ metadata.file_id }}</p>
+
+      <p class="font-bold">SHA-256 Hash</p>
+      <p class="font-mono break-all">{{ metadata.sha256 }}</p>
+    </div>
+
+    <div class="space-y-2">
+      <button onclick="copyLink()" class="block w-full text-center bg-black text-white py-2">
+        Copy Download Link
+      </button>
+
+      <a href="/" class="block w-full text-center bg-black text-white py-2">
+        Return to Home
+      </a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block head %}
+<script>
+  function copyLink() {
+    navigator.clipboard.writeText("{{ url_for('download_page', file_id=metadata.file_id, _external=True) }}");
+  }
+</script>
+{% endblock %}
