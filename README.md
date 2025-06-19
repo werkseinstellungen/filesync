@@ -3,6 +3,8 @@
 **filesync** is a super simple web app for uploading and downloading files.  
 Each uploaded file gets a unique ID and a private download link.
 
+👉 **[Go check it out →](https://crashdebug.dev)**
+
 ## Features
 
 - Upload files up to 50 MB
